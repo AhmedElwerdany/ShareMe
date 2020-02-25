@@ -1,0 +1,218 @@
+@import "~antd/dist/antd.css";
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato',sans-serif;
+  background-color: #f1f6f9;
+}
+
+.ant-layout {
+  background-color: unset;
+}
+.ant-layout-header {
+  background-color: #fff;
+  height: auto;
+  line-height: unset;
+  padding: 0px 5px;
+}
+.logo {
+  padding: 13px;
+  height: auto;
+  position: relative;
+  border: 1px solid #f0f0f0;
+  border-top: 0;
+  border-bottom: 0;
+  color: #333;
+  display: inline-block;
+  background: #f9fafa;
+  font-size: 20px;
+
+  &::before {
+    content: "";
+    border: 10px solid;
+    position: absolute;
+    right: -10px;
+    border-left-color: #f9fafa;
+    border-right: 0;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    z-index: 2;
+    transform: translateY(-50%);
+    top: 48%;
+  }
+  &::after {
+    z-index: 1;
+    content: "";
+    border: 10px solid;
+    position: absolute;
+    right: -11px;
+    top: 50%;
+    border-left-color: #f0f0f0;
+    border-right: 0;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    transform: translateY(-50%);
+  }
+}
+
+.logo,
+.ant-menu {
+  display: inline-block;
+}
+
+.ant-menu {
+  padding-left: 15px;
+  line-height: 49px;
+  border: none;
+}
+
+.ant-layout-content {
+  padding: 50px 0px;
+}
+
+// form style
+.ant-form {
+  width: 90%;
+  margin: auto;
+  background-color: #fff;
+  padding: 10px;
+}
+.ant-form-item label > .anticon {
+  padding: 7px;
+  vertical-align: middle;
+}
+
+//
+.ant-select-selection,
+.ant-input {
+  background-color: #f5f8fa;
+  border: 1px solid #b1ccd8;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: none;
+}
+
+.ant-input-group-addon {
+  border-radius: 0;
+  background-color: #c2e7f7;
+  color: 
+#5e4e4e;
+font-weight: bold;
+background-color:
+#f5f8fa;
+border: 1px solid
+  #b1ccd8;
+  border-left: none;
+}
+
+/* 
+.ant-select-selection__placeholder,.ant-input {
+  color: #666;
+} */
+
+.ant-form-item-label {
+  box-shadow: 0px 0px 0px 1px #b1ccd8 inset;
+  color: #15868e;
+  background-color: #deeef5;
+  padding: 0 10px;
+}
+
+.ant-form-item-label > label {
+  color: inherit;
+  font-weight: bold;
+}
+
+.message {
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 3px;
+  color: #555;
+  border: 1px solid #ebebeb;
+  position: relative;
+
+  &::before {
+    content: "";
+    border: 8px solid transparent;
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    border-top: 0;
+    border-bottom-color: #fff;
+    z-index: 11;
+  }
+
+  &::after {
+    content: "";
+    border: 8px solid transparent;
+    position: absolute;
+    top: -9px;
+    left: 10px;
+    border-top: 0;
+    border-bottom-color: #ebebeb;
+    z-index: 10;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 100%;
+    transform: scale(1);
+  }
+}
+
+@for $i from 1 through 6 {
+  .users .ant-col:nth-child(6n + #{$i}) .ant-card {
+    animation: opacity 0.5s ease-in #{0.1 + $i / 26}s backwards;
+  }
+}
+$gap: 32px;
+$widescreen: 1152px + (2 * $gap);
+$desktop: 960px + (2 * $gap);
+$tablet: 769px;
+$fullhd: 1344px + (2 * $gap);
+
+.container {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $tablet) {
+  .container {
+    width: $tablet - (2 * $gap);
+  }
+}
+
+@media screen and (max-width:$tablet) {
+  .ant-form {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .container {
+    width: $desktop - (2 * $gap);
+  }
+}
+
+@media screen and (min-width: $widescreen) {
+  .container {
+    width: $widescreen - (2 * $gap);
+  }
+}
+
+@media screen and (min-width: $fullhd) {
+  .container {
+    width: $fullhd - (2 * $gap);
+  }
+}
